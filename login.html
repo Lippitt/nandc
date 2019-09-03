@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<html> 
+
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="text/javascript" src="backend_js.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <title>Noughts & Crosses</title>
+    <script>
+        $("document").ready( function () {
+            var playerOne = prompt("Enter Player One Name");
+            while (playerOne == null || playerOne.length == 0) playerOne = prompt("Enter Player One Name");
+            playerOne = playerOne.replace(/\s/g, '');
+            setPlayerOne(playerOne);
+
+            var playerTwo = prompt("Enter Player Two Name");
+            while (playerTwo == null || playerTwo.length == 0) playerTwo = prompt("Enter Player Two Name");
+            playerTwo = playerTwo.replace(/\s/g, '');
+            if (playerOne == playerTwo) playerTwo += '2'; //can change this if not great
+            setPlayerTwo(playerTwo);
+        });
+    </script>
+</head>
+
+<body>
+    <h1 align="center" style="font-family: Helvetica;">Two Player Noughts & Crosses</h1>
+    <br /> <br />
+    <!-- add the grid -->
+    <div class="wrapper">
+    <div class="grid">
+        <div class="box"><button class="btn" onclick="pressed(this)" id="a1"></button></div>
+        <div class="box"><button class="btn" onclick="pressed(this)" id="a2"></button></div>
+        <div class="box"><button class="btn" onclick="pressed(this)" id="a3"></button></div>
+        <div class="box"><button class="btn" onclick="pressed(this)" id="b1"></button></div>
+        <div class="box"><button class="btn" onclick="pressed(this)" id="b2"></button></div>
+        <div class="box"><button class="btn" onclick="pressed(this)" id="b3"></button></div>
+        <div class="box"><button class="btn" onclick="pressed(this)" id="c1"></button></div>
+        <div class="box"><button class="btn" onclick="pressed(this)" id="c2"></button></div>
+        <div class="box"><button class="btn" onclick="pressed(this)" id="c3"></button></div>
+    </div><br />
+    </div>
+    <div class="buttons">
+        <button class="bottominfo" onclick="tallies()"> Score </button>
+        <button class="bottominfo" onclick="restart()"> Restart </button>
+    </div>
+</body>
+
+</html>
